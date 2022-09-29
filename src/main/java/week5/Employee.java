@@ -1,7 +1,8 @@
 package week5;
 
 public abstract class Employee extends Customer{
-    private final double discount = 0.10;
+    private final double DISCOUNT = 0.10;
+
 
 
     public Employee(String name, Clothing[] clothingItems, char size) {
@@ -10,13 +11,8 @@ public abstract class Employee extends Customer{
 
 
 
-    public Employee(String name) {
-        super(name);
-    }
-
-
-    public double getDiscount() {
-        return discount;
+    public double getDISCOUNT() {
+        return DISCOUNT;
     }
 
     abstract void printEmpPriceAfterDisc(Clothing clothing);

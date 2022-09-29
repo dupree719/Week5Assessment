@@ -25,4 +25,14 @@ public class Clothing {
     public double getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return "Clothing " +
+                "Description='" + description + '\'' +
+                ", Price=" + price +
+                ", Size=" + size +
+                '}';
+    }
 }
+

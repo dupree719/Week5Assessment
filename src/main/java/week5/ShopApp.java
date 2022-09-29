@@ -1,12 +1,11 @@
 package week5;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ShopApp {
 
-    public void checkAndPrintTotalMC() {
-        System.out.println();
-    }
 
     public static double calcTotal(Clothing[] clothing) {
         double total = 0.0;
@@ -22,7 +21,9 @@ public class ShopApp {
         }
         return false;
     }
-        public static void sortAndPrintClothingByPrice(ArrayList<Clothing> clothingPrices){
+        public static void sortAndPrintClothingByPrice(ArrayList<Clothing> clothingArrayList){
+            Collections.sort(clothingArrayList, Comparator.comparingDouble(Clothing :: getPrice));
+            clothingArrayList.forEach(clothing -> System.out.println(clothing));
 
         }
 
@@ -32,7 +33,12 @@ public class ShopApp {
 
 
         }
-        public static void printDiscAmtOff (Discountable[]discount, Clothing clothing){
+        public static void printDiscAmtOff (Discountable[]discountables, Clothing clothing){
+                for(int i =0; i < discountables.length; i++){
+                    System.out.println(discountables[i].calcDiscount(clothing));
+
+                }
+
 
         }
 

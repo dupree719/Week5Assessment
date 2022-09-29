@@ -1,39 +1,36 @@
 package week5;
 
 public class Manager extends Employee implements Discountable{
-    private final double discount = 0.25;
+    private final double DISCOUNT = 0.25;
 
     public Manager(String name, Clothing[] clothingItems, char size) {
         super(name, clothingItems, size);
+
     }
 
 
-
-    public Manager(String name) {
-        super(name);
+    public double getDISCOUNT() {
+        return DISCOUNT;
     }
-
-    public double getDiscount() {
-        return discount;
-    }
-
 
 
     @Override
-    void printEmpPriceAfterDisc(Clothing clothing) {
+    public double calcDiscount(Clothing clothing) {
+        return clothing.getPrice()*DISCOUNT;
 
     }
 
     @Override
-    public void calcDiscount(Clothing clothing) {
-
+    public void printEmpPriceAfterDisc(Clothing clothing) {
+        System.out.println(clothing.getPrice()-calcDiscount(clothing));
 
     }
+
 
     @Override
     public String toString() {
         return "Manager{" +
-                "discount=" + discount +
+                "discount=" + DISCOUNT +
                 '}';
     }
 }
